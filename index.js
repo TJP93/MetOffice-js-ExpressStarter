@@ -20,8 +20,16 @@ app.use(express.static('frontend'));
 app.get('/forecast', async (req, res) => {
     const userLocation = req.query.location;
     console.log("get forecast for ", userLocation);
-    res.send("Not yet implemented");
+    let forecastPromise = forecastService.getForecastForLocation(userLocation);
+    forecastPromise.then(
+        forecast => console.log("Forecast,", forecast)
+    )
+    forecastPromise.then(
+        forecast => res.send(forecast)
+    )
 })
+
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
