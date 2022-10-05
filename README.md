@@ -1,2 +1,2 @@
-# MetOffice-js-ExpressStarter
-Express Starter Exercise
+# MetOffice-js
+independent copy of JavaScript MetOffice Exercise
